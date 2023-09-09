@@ -19,6 +19,7 @@
 
 /* ~~~~ Functions Prototypes ~~~~ */
 void *my_memchr(const void *const str,const int value, unsigned int n);
+int my_memcmp(const void *const str1, const void *const str2, unsigned int n);
 
 #endif
 /*=========================== File Guard End ===========================*/

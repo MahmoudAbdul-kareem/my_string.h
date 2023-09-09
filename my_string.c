@@ -14,7 +14,7 @@ void *my_memchr(const void *const str,const int value, unsigned int n)
 
     if(NULL == str)
     {
-        printf("memchr failed, due to NULL pointer passed!!\n");
+        printf("my_memchr failed, due to NULL pointer passed!!\n");
     }
     else
     {
@@ -30,6 +30,42 @@ void *my_memchr(const void *const str,const int value, unsigned int n)
                 str_ptr++;
             }
         }
+    }
+
+    return ret_val;
+}
+int my_memcmp(const void *const str1, const void *const str2, unsigned int n)
+{
+    int ret_val = 0;   // 0 or 1 or -1
+    const unsigned char * str1_ptr = str1;
+    const unsigned char * str2_ptr = str2;
+
+    if((NULL == str1) || (NULL == str2))
+    {
+        printf("my_memcmp failed, due to NULL pointer passed!!\n");
+    }
+    else
+    {
+        while (n--)
+        {
+            if(*str1_ptr != *str2_ptr)
+            {
+                if(*str1_ptr > *str2_ptr)
+                {
+                    ret_val = 1;
+                }
+                else
+                {
+                    ret_val = -1;
+                }
+            }
+            else
+            {
+                str1_ptr++;
+                str2_ptr++;
+            }
+        }
+        
     }
 
     return ret_val;
