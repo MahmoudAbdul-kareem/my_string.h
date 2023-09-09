@@ -6,10 +6,11 @@
 
 
 /* ~~~~ Fucntions Definitions ~~~~ */
-void *memchr(const void *const str,const int c, unsigned int n)
+void *my_memchr(const void *const str,const int value, unsigned int n)
 {
     void *ret_val = NULL;
     const unsigned char *str_ptr = str;
+    const unsigned char byte_value = (unsigned char)value;
 
     if(NULL == str)
     {
@@ -19,11 +20,17 @@ void *memchr(const void *const str,const int c, unsigned int n)
     {
         while (n--)
         {
-            
+            if(byte_value == *str_ptr) // is there casting?
+            {
+                ret_val = (void *)str_ptr;
+                break;
+            }
+            else
+            {
+                str_ptr++;
+            }
         }
-        
     }
-
 
     return ret_val;
 }

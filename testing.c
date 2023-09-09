@@ -8,6 +8,7 @@
 
 /* ~~~~~~~~~~~~~~~~~~~~~~ Includes Section Start ~~~~~~~~~~~~~~~~~~~~~~ */
 #include <stdio.h>
+#include <string.h>
 #include "my_string.h"
 /* ~~~~~~~~~~~~~~~~~~~~~~~ Includes Section End ~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -15,26 +16,37 @@
 // macros:
 
 // global variables:
-
+char *name = "mahmoud abdul_kareem";
 /* ~~~~~~~~~~~~~~~~~~~~~~ Definition Section End ~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* ~~~~~~~~~~~~~~~~~ Global Decleration Section Start ~~~~~~~~~~~~~~~~~ */
 // variables:
 
 // prototypes:
-void file();
+void file(void);
 /* ~~~~~~~~~~~~~~~~~~ Global Decleration Section End ~~~~~~~~~~~~~~~~~~ */
 
 
 int main()
 {
+    // void *p = NULL;
+    // p = my_memchr(name, ' ', strlen(name));
+
+    // printf("> %s \n", p);
+
+    // const char str[] = "https://www.tutorialspoint.com";
+    // const char ch = '.';
+    // char *ret;
+    // ret = my_memchr(str, ch, strlen(str));
+    // printf("String after |%c| is - |%s|\n", ch, ret);
+    
     
     return 0;
 }
 
 
 /* ~~~~~~~~~~~~~~~~~~~~ Sub-Program Section Start ~~~~~~~~~~~~~~~~~~~~~ */
-void file()
+void file(void)
 {
     // freopen("input.txt", "rt", stdin);  // give input to terminal
     freopen("output.txt", "wt", stdout);

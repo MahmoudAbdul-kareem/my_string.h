@@ -18,7 +18,7 @@
 /* ~~~ Variables Declerations ~~~ */
 
 /* ~~~~ Functions Prototypes ~~~~ */
-void *memchr(const void *const str,const int c, unsigned int n);
+void *my_memchr(const void *const str,const int value, unsigned int n);
 
 #endif
 /*=========================== File Guard End ===========================*/
