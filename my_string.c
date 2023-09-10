@@ -106,25 +106,30 @@ void *my_memmove_v1(void *const dest, const void *const src,const unsigned int n
     }
     else
     {
-        for(iterator = 0; iterator < n; iterator++)
+        if(src_ptr != dest_ptr)
         {
-            if((src_ptr + iterator) == dest_ptr)  // overlapping check
+            for(iterator = 0; iterator < n; iterator++)
             {
-                overlap_digits = (src_ptr + n) - dest_ptr;
-                break;
+                if((src_ptr + iterator) == dest_ptr)  // overlapping check
+                {
+                    overlap_digits = (src_ptr + n) - dest_ptr;
+                    break;
+                }
+            }
+            // skip overlapping digits
+            for(iterator = 0; iterator < (n - overlap_digits); iterator++)
+            {
+                dest_ptr[iterator + overlap_digits] = src_ptr[iterator + overlap_digits];
+            }
+            // copy overlapping digits
+            for(iterator = 0; iterator < (overlap_digits); iterator++)
+            {
+                dest_ptr[iterator] = src_ptr[iterator];
             }
         }
-        // skip overlapping digits
-        for(iterator = 0; iterator < (n - overlap_digits); iterator++)
-        {
-            dest_ptr[iterator + overlap_digits] = src_ptr[iterator + overlap_digits];
-        }
-        // copy overlapping digits
-        for(iterator = 0; iterator < (overlap_digits); iterator++)
-        {
-            dest_ptr[iterator] = src_ptr[iterator];
-        }
+        else {}
     }
+
     return dest;
 }
 
@@ -157,6 +162,26 @@ void *my_memmove_v2(void *const dest, const void *const src,const unsigned int n
             }
         }
         else {}
+    }
+
+    return dest;
+}
+
+void *my_memset(void *const dest, const int ch, unsigned int n)
+{
+    unsigned char *dest_ptr = dest;
+    const unsigned char value = (const unsigned char)ch;
+
+    if(NULL == dest)
+    {
+        printf("my_memset  failed, due to NULL pointer passed!!\n");
+    }
+    else
+    {
+        while (n--)
+        {
+            *dest_ptr++ = value;
+        }
     }
 
     return dest;

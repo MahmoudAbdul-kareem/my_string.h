@@ -48,13 +48,22 @@ int main()
     // my_memcpy(arr_2, arr_1, 7);
     // printf("> %s \n", arr_2);
 
-    char str[] = "Hello, World!";
-    printf("> %s \n", str);
-    my_memmove_v2(str + 7, str + 1, 7);
-    printf("> %s \n", str);
+    // char str[] = "Hello, World!";
+    // printf("> %s \n", str);
+    // my_memmove_v2(str + 7, str + 1, 7);
+    // printf("> %s \n", str);
 
-    // Hello, World!
-    // Hello, ello, W 
+    // // Hello, World!
+    // // Hello, ello, W 
+
+    // printf("> %s \n", arr_2);
+    // my_memset(arr_2, '*', 31);
+    // printf("> %s \n", arr_2);
+
+    // char str[20] = "Hello, World!";
+    // my_memset(str + 7, 'X', 5); // Set 'World' to 'XXXXX'
+
+    // printf("%s\n", str); // Output: "Hello, XXXXX!"
 
     return 0;
 }
