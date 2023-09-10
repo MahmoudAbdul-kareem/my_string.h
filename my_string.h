@@ -27,6 +27,7 @@ void *my_memset(void *const dest, const int ch, unsigned int n);
 char *my_strcat(char *dest, const char *src);
 char *my_strncat(char *dest, const char *src, unsigned int n);
 char *my_strchr(const char *str, const int c);
+int my_strcmp(const char *str1, const char *str2);
 
 #endif
 /*=========================== File Guard End ===========================*/

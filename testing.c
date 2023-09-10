@@ -18,7 +18,7 @@
 // global variables:
 char *name = "mahmoud abdul_kareem";
 char arr_1[30] = "123456789";
-char arr_2[30] = "123,";
+char arr_2[30] = "123456789";
 /* ~~~~~~~~~~~~~~~~~~~~~~ Definition Section End ~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* ~~~~~~~~~~~~~~~~~ Global Decleration Section Start ~~~~~~~~~~~~~~~~~ */
@@ -69,8 +69,10 @@ int main()
     // my_strncat(arr_2, arr_1, 5);
     // printf("%s\n", arr_2);
 
-    char *p = my_strchr(arr_1, '1');
-    printf("%c \n", *p);
+    // char *p = my_strchr(arr_1, '1');
+    // printf("%c \n", *p);
+
+    printf("> %i \n", my_strcmp(arr_1, arr_2));
 
     return 0;
 }
