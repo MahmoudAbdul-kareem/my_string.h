@@ -203,7 +203,7 @@ char *my_strcat(char *dest, const char *src)
         {
             dest++;
         }
-        
+
         // copy src to the end of dest
         while(*src)
         {
@@ -244,5 +244,30 @@ char *my_strncat(char *dest, const char *src, unsigned int n)
     }
 
     return real_dest;
+}
+
+char *my_strchr(const char *str, const int c)
+{
+    char *ret_val = NULL;
+    const unsigned char value = (unsigned char)c;
+
+    if(NULL == str)
+    {
+        printf("my_strchr  failed, due to NULL pointer passed!!\n");
+    }
+    else
+    {
+        while (*str)
+        {
+            if(*str == value)
+            {
+                ret_val = (char *)str;
+                break;
+            }
+            str++;
+        }
+    }
+
+    return ret_val;
 }
 
