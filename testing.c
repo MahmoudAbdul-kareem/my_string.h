@@ -17,8 +17,8 @@
 
 // global variables:
 char *name = "mahmoud abdul_kareem";
-char arr_1[5] = {1, 2, 3, 4, 5};
-char arr_2[5] = {1, 2, 3, 4, 5};
+char arr_1[30] = "123456789";
+char arr_2[30];
 /* ~~~~~~~~~~~~~~~~~~~~~~ Definition Section End ~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* ~~~~~~~~~~~~~~~~~ Global Decleration Section Start ~~~~~~~~~~~~~~~~~ */
@@ -42,7 +42,11 @@ int main()
     // ret = my_memchr(str, ch, strlen(str));
     // printf("String after |%c| is - |%s|\n", ch, ret);
 
-    printf("> %i \n", my_memcmp(arr_1, arr_2, 5));
+    // printf("> %i \n", my_memcmp(arr_1, arr_2, 5));
+
+    printf("> %s \n", arr_1);
+    my_memcpy(arr_2, arr_1, 7);
+    printf("> %s \n", arr_2);
     
     return 0;
 }

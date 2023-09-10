@@ -70,3 +70,23 @@ int my_memcmp(const void *const str1, const void *const str2, unsigned int n)
 
     return ret_val;
 }
+void *my_memcpy(void *const dest, const void *const src, const unsigned int n)
+{
+    unsigned char *dest_ptr = dest;
+    const unsigned char *src_ptr = src;
+    unsigned int iterator = 0;
+
+    if((NULL == dest) || (NULL == src))
+    {
+        printf("my_memcpy  failed, due to NULL pointer passed!!\n");
+    }
+    else
+    {
+        for(iterator = 0; iterator < n; iterator++)
+        {
+            dest_ptr[iterator] = src_ptr[iterator];
+        }
+    }
+
+    return dest;
+}
