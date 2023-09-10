@@ -1,5 +1,6 @@
 /* ~~~~~~~~~~ Includes ~~~~~~~~~~~ */
 #include <stdio.h>
+#include <string.h>
 #include "my_string.h"
 
 /* ~~~~~~ Global Variables ~~~~~~~ */
@@ -185,4 +186,33 @@ void *my_memset(void *const dest, const int ch, unsigned int n)
     }
 
     return dest;
+}
+
+char *my_strcat(char *dest, const char *src)
+{
+    char *const real_dest = dest;
+
+    if((NULL == dest) || (NULL == src))
+    {
+        printf("my_strcat  failed, due to NULL pointer passed!!\n");
+    }
+    else
+    {
+        // move the dest to the end of the string
+        while (*dest)
+        {
+            dest++;
+        }
+
+        // copy src to the end of dest
+        while(*src)
+        {
+            *dest++ = *src++;
+        }
+        
+        // Null-terminate the concatenated string
+        *dest = '\0';
+    }
+
+    return real_dest;
 }

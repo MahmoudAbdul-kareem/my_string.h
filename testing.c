@@ -18,7 +18,7 @@
 // global variables:
 char *name = "mahmoud abdul_kareem";
 char arr_1[30] = "123456789";
-char arr_2[30];
+char arr_2[30] = "123,";
 /* ~~~~~~~~~~~~~~~~~~~~~~ Definition Section End ~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* ~~~~~~~~~~~~~~~~~ Global Decleration Section Start ~~~~~~~~~~~~~~~~~ */
@@ -64,6 +64,10 @@ int main()
     // my_memset(str + 7, 'X', 5); // Set 'World' to 'XXXXX'
 
     // printf("%s\n", str); // Output: "Hello, XXXXX!"
+
+    printf("%s\n", arr_2);
+    my_strcat(arr_2, arr_1);
+    printf("%s\n", arr_2);
 
     return 0;
 }
