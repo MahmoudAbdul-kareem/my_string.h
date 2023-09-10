@@ -44,10 +44,18 @@ int main()
 
     // printf("> %i \n", my_memcmp(arr_1, arr_2, 5));
 
-    printf("> %s \n", arr_1);
-    my_memcpy(arr_2, arr_1, 7);
-    printf("> %s \n", arr_2);
-    
+    // printf("> %s \n", arr_1);
+    // my_memcpy(arr_2, arr_1, 7);
+    // printf("> %s \n", arr_2);
+
+    char str[] = "Hello, World!";
+    printf("> %s \n", str);
+    my_memmove_v2(str + 7, str + 1, 7);
+    printf("> %s \n", str);
+
+    // Hello, World!
+    // Hello, ello, W 
+
     return 0;
 }
 

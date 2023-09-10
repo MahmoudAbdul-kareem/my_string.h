@@ -34,6 +34,7 @@ void *my_memchr(const void *const str,const int value, unsigned int n)
 
     return ret_val;
 }
+
 int my_memcmp(const void *const str1, const void *const str2, unsigned int n)
 {
     int ret_val = 0;   // 0 or 1 or -1
@@ -70,6 +71,7 @@ int my_memcmp(const void *const str1, const void *const str2, unsigned int n)
 
     return ret_val;
 }
+
 void *my_memcpy(void *const dest, const void *const src, const unsigned int n)
 {
     unsigned char *dest_ptr = dest;
@@ -86,6 +88,75 @@ void *my_memcpy(void *const dest, const void *const src, const unsigned int n)
         {
             dest_ptr[iterator] = src_ptr[iterator];
         }
+    }
+
+    return dest;
+}
+
+void *my_memmove_v1(void *const dest, const void *const src,const unsigned int n)
+{
+    unsigned int iterator = 0;
+    unsigned int overlap_digits = 0;
+    unsigned char *const dest_ptr = dest;
+    const unsigned char *const src_ptr = src;
+
+    if((NULL == dest) || (NULL == src))
+    {
+        printf("my_memmove  failed, due to NULL pointer passed!!\n");
+    }
+    else
+    {
+        for(iterator = 0; iterator < n; iterator++)
+        {
+            if((src_ptr + iterator) == dest_ptr)  // overlapping check
+            {
+                overlap_digits = (src_ptr + n) - dest_ptr;
+                break;
+            }
+        }
+        // skip overlapping digits
+        for(iterator = 0; iterator < (n - overlap_digits); iterator++)
+        {
+            dest_ptr[iterator + overlap_digits] = src_ptr[iterator + overlap_digits];
+        }
+        // copy overlapping digits
+        for(iterator = 0; iterator < (overlap_digits); iterator++)
+        {
+            dest_ptr[iterator] = src_ptr[iterator];
+        }
+    }
+    return dest;
+}
+
+void *my_memmove_v2(void *const dest, const void *const src,const unsigned int n)
+{
+    unsigned char *const dest_ptr = dest;
+    const unsigned char *const src_ptr = src;
+    unsigned int iterator = 0;
+
+    if((NULL == dest) || (NULL == src))
+    {
+        printf("my_memmove  failed, due to NULL pointer passed!!\n");
+    }
+    else
+    {
+        if(src_ptr > dest_ptr) // NO overlapping 
+        {
+            // copy forward
+            for(iterator = 0; iterator < n; iterator++)
+            {
+                dest_ptr[iterator] = src_ptr[iterator];
+            }
+        }
+        else if(src_ptr < dest_ptr) // expected overlapping
+        {
+            // copy backward (to handle overlapping)
+            for(iterator = n; iterator > 0; iterator--)
+            {
+                dest_ptr[iterator - 1] = src_ptr[iterator - 1];
+            }
+        }
+        else {}
     }
 
     return dest;
