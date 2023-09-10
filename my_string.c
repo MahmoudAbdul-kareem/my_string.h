@@ -302,3 +302,36 @@ int my_strcmp(const char *str1, const char *str2)
 
     return ret_val;
 }
+
+int my_strncmp(const char *str1, const char *str2, unsigned int n)
+{
+    int ret_val = 0;  /* 0 or 1 or -1 */
+
+    if((NULL == str1) || (NULL == str2))
+    {
+        printf("my_stnrcmp  failed, due to NULL pointer passed!!\n");
+    }
+    else
+    {
+        while((*str1 == *str2) && *str1 && *str2 && n--)
+        {
+            str1++;
+            str2++;
+        }
+        if(*str1 > *str2)
+        {
+            ret_val = 1;
+        }
+        else if (*str1 < *str2)
+        {
+            ret_val = -1;
+        }
+        else {}
+
+        // you can use this line instead of if elseif else statements.
+        // ret_val = *(unsigned char *)str1 - *(unsigned char *)str2;
+    }
+
+    return ret_val;
+}
+
