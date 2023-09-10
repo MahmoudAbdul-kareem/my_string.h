@@ -25,6 +25,7 @@ void *my_memmove_v1(void *const dest, const void *const src,const unsigned int n
 void *my_memmove_v2(void *const dest, const void *const src,const unsigned int n);
 void *my_memset(void *const dest, const int ch, unsigned int n);
 char *my_strcat(char *dest, const char *src);
+char *my_strncat(char *dest, const char *src, unsigned int n);
 
 #endif
 /*=========================== File Guard End ===========================*/

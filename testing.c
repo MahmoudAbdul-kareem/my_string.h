@@ -66,7 +66,7 @@ int main()
     // printf("%s\n", str); // Output: "Hello, XXXXX!"
 
     printf("%s\n", arr_2);
-    my_strcat(arr_2, arr_1);
+    my_strncat(arr_2, arr_1, 5);
     printf("%s\n", arr_2);
 
     return 0;

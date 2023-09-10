@@ -203,7 +203,7 @@ char *my_strcat(char *dest, const char *src)
         {
             dest++;
         }
-
+        
         // copy src to the end of dest
         while(*src)
         {
@@ -216,3 +216,33 @@ char *my_strcat(char *dest, const char *src)
 
     return real_dest;
 }
+
+char *my_strncat(char *dest, const char *src, unsigned int n)
+{
+    char *const real_dest = dest;
+
+    if((NULL == dest) || (NULL == src))
+    {
+        printf("my_strcat  failed, due to NULL pointer passed!!\n");
+    }
+    else
+    {
+        // move the dest to the end of the string
+        while (*dest)
+        {
+            dest++;
+        }
+
+        // Copy up to 'n' characters from the src to the dest
+        while(n-- && *src)
+        {
+            *dest++ = *src++;
+        }
+        
+        // Null-terminate the concatenated string
+        *dest = '\0';
+    }
+
+    return real_dest;
+}
+
