@@ -429,3 +429,23 @@ unsigned int my_strcspn_v2(const char *str1, const char *const str2)
 
     return counter;
 }
+
+unsigned int my_strlen(const char *str)
+{
+    unsigned int len = 0;
+
+    if(NULL == str)
+    {
+        printf("my_strlen  failed, due to NULL pointer passed!!\n");
+    }
+    else
+    {
+        while (*str)
+        {
+            len++;
+            str++;
+        }
+    }
+
+    return len;
+}

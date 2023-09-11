@@ -9,6 +9,7 @@
 /* ~~~~~~~~~~~~~~~~~~~~~~ Includes Section Start ~~~~~~~~~~~~~~~~~~~~~~ */
 #include <stdio.h>
 #include <string.h>
+#include <errno.h>
 #include "my_string.h"
 /* ~~~~~~~~~~~~~~~~~~~~~~~ Includes Section End ~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -88,12 +89,21 @@ int main()
     // printf("Final copied string : %s\n", dest);
     // // Final copied string : This is MahmoudAbdul-kareem
     
-    int len;
-    const char str1[] = "ABCDEF4964910";
-    const char str2[] = "013";
+    // int len;
+    // const char str1[] = "ABCDEF4964910";
+    // const char str2[] = "013";
 
-    len = my_strcspn_v1(str1, str2);
-    printf("> %i \n", len); // 11
+    // len = my_strcspn_v1(str1, str2);
+    // printf("> %i \n", len); // 11
+
+    // FILE *fp;
+
+    // fp = fopen("file.txt","r");
+    // if( fp == NULL ) {
+    //     printf("Error: %s\n", strerror(errno));
+    // }
+
+    // printf("> %d \n", my_strlen(arr_1));
 
     return 0;
 }
