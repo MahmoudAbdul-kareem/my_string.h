@@ -449,3 +449,27 @@ unsigned int my_strlen(const char *str)
 
     return len;
 }
+
+char *my_strpbrk(const char *str1, const char *str2)
+{
+    char *ret_val = NULL;
+
+    if((NULL == str1) || (NULL == str2))
+    {
+        printf("my_strpbrk  failed, due to NULL pointer passed!!\n");
+    }
+    else
+    {
+        while (*str1)
+        {
+            if(my_strchr(str2, *str1))
+            {
+                ret_val = (char *)str1;
+                break;
+            }
+            str1++;
+        }
+    }
+
+    return ret_val;
+}
