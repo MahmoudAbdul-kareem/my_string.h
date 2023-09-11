@@ -78,15 +78,16 @@ int main()
     // my_strcpy(arr_2, arr_1);
     // printf("> %s \n", arr_2);
 
-    char src[40];
-    char dest[100];
+    // char src[40];
+    // char dest[100];
     
-    my_memset(dest, '\0', sizeof(dest));
-    my_strcpy(src, "This is MahmoudAbdul-kareem");
-    my_strcpy(dest, src);
+    // my_memset(dest, '\0', sizeof(dest));
+    // my_strcpy(src, "This is MahmoudAbdul-kareem");
+    // my_strcpy(dest, src);
 
-    printf("Final copied string : %s\n", dest);
-    // Final copied string : This is MahmoudAbdul-kareem
+    // printf("Final copied string : %s\n", dest);
+    // // Final copied string : This is MahmoudAbdul-kareem
+    
 
     return 0;
 }

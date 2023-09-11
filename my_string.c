@@ -355,3 +355,24 @@ char *my_strcpy(char *dest, const char *src)
     return dest_ptr;
 }
 
+char *my_strncpy(char *dest, const char *src, unsigned int n)
+{
+    char *const dest_ptr = dest;
+
+    if((NULL == dest) || (NULL == src))
+    {
+        printf("my_strncpy  failed, due to NULL pointer passed!!\n");
+    }
+    else
+    {
+        while ((*dest++ = *src++) && n--); // copy to (n) or the end of (src) string
+        
+        while (n--) // Fill the remaining space in dest with null characters
+        {
+            *dest++ = '\0';
+        }
+    }
+
+    return dest_ptr;
+}
+
