@@ -335,3 +335,23 @@ int my_strncmp(const char *str1, const char *str2, unsigned int n)
     return ret_val;
 }
 
+char *my_strcpy(char *dest, const char *src)
+{
+    char *const dest_ptr = dest;
+
+    if((NULL == dest) || (NULL == src))
+    {
+        printf("my_strcpy  failed, due to NULL pointer passed!!\n");
+    }
+    else
+    {
+        // while (*src)
+        // {
+        //     *dest++ = *src++;
+        // }
+        while ((*dest++ = *src++));
+    }
+    
+    return dest_ptr;
+}
+

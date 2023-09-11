@@ -18,7 +18,7 @@
 // global variables:
 char *name = "mahmoud abdul_kareem";
 char arr_1[30] = "123456789";
-char arr_2[30] = "123456789";
+char arr_2[30];
 /* ~~~~~~~~~~~~~~~~~~~~~~ Definition Section End ~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* ~~~~~~~~~~~~~~~~~ Global Decleration Section Start ~~~~~~~~~~~~~~~~~ */
@@ -72,7 +72,21 @@ int main()
     // char *p = my_strchr(arr_1, '1');
     // printf("%c \n", *p);
 
-    printf("> %i \n", my_strcmp(arr_1, arr_2));
+    // printf("> %i \n", my_strcmp(arr_1, arr_2));
+
+    // printf("> %s \n", arr_2);
+    // my_strcpy(arr_2, arr_1);
+    // printf("> %s \n", arr_2);
+
+    char src[40];
+    char dest[100];
+    
+    my_memset(dest, '\0', sizeof(dest));
+    my_strcpy(src, "This is MahmoudAbdul-kareem");
+    my_strcpy(dest, src);
+
+    printf("Final copied string : %s\n", dest);
+    // Final copied string : This is MahmoudAbdul-kareem
 
     return 0;
 }
