@@ -376,3 +376,56 @@ char *my_strncpy(char *dest, const char *src, unsigned int n)
     return dest_ptr;
 }
 
+unsigned int my_strcspn_v1(const char *str1, const char *const str2)
+{
+    unsigned int counter = 0;
+    unsigned char flag = 1;
+    unsigned int iterator = 0;
+
+    if((NULL == str1) || (NULL == str2))
+    {
+        printf("my_strcspn_v1  failed, due to NULL pointer passed!!\n");
+    }
+    else
+    {
+        while (*str1 && flag)
+        {
+            for(iterator = 0; str2[iterator]; iterator++)
+            {
+                if(*str1 == str2[iterator])
+                {
+                    flag = 0;
+                    break;
+                }
+            }
+            counter++;
+            str1++;
+        }
+    }
+
+    return (counter - 1);   
+}
+
+unsigned int my_strcspn_v2(const char *str1, const char *const str2)
+{
+    unsigned int counter = 0;
+
+    if((NULL == str1) || (NULL == str2))
+    {
+        printf("my_strcspn_v2  failed, due to NULL pointer passed!!\n");
+    }
+    else
+    {
+        while (*str1)
+        {
+            if(my_strchr(str2, *str1))
+            {
+                break;
+            }
+            str1++;
+            counter++;
+        }
+    }
+
+    return counter;
+}

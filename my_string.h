@@ -31,6 +31,8 @@ int my_strcmp(const char *str1, const char *str2);
 int my_strncmp(const char *str1, const char *str2, unsigned int n);
 char *my_strcpy(char *dest, const char *src);
 char *my_strncpy(char *dest, const char *src, unsigned int n);
+unsigned int my_strcspn_v1(const char *str1, const char *const str2);
+unsigned int my_strcspn_v2(const char *str1, const char *const str2);
 
 #endif
 /*=========================== File Guard End ===========================*/
