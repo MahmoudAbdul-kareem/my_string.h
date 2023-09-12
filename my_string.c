@@ -517,3 +517,45 @@ unsigned int my_strspn(const char *str1, const char *const str2)
 
     return counter;
 }
+
+char *my_strstr(const char *haystack, const char *const needle)
+{
+    char *ret_val = NULL;
+    const char *needle_ptr = needle;
+    unsigned char flag = 0;
+
+    if((NULL == haystack) || (NULL == needle))
+    {
+        printf("my_strstr  failed, due to NULL pointer passed!!\n");
+    }
+    else
+    {
+        while (*haystack)
+        {
+            ret_val = (char *)haystack;
+
+            while (*needle_ptr && (*haystack == *needle_ptr))
+            {
+                haystack++;
+                needle_ptr++;
+            }
+
+            if (*needle_ptr == '\0')  // substring found
+            {
+                flag = 1;
+                break;
+            }
+            else if (*haystack == '\0')
+            {
+                break;
+            }
+            else
+            {
+                needle_ptr = needle;
+                haystack++;
+            }
+        }
+    }
+
+    return ((flag) ? ret_val : NULL);
+}

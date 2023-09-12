@@ -108,11 +108,17 @@ int main()
     // char *ptr = my_strrchr(name, '*');
     // printf("> %s \n", ptr);
 
-    int len;
-    const char str1[] = "ABCDEFG019874ABCD";
-    const char str2[] = "ABCD";
-    len = my_strspn(str1, str2);
-    printf("Length of initial segment matching %d\n", len );
+    // int len;
+    // const char str1[] = "ABCDEFG019874ABCD";
+    // const char str2[] = "ABCD";
+    // len = my_strspn(str1, str2);
+    // printf("Length of initial segment matching %d\n", len );
+
+    const char haystack[20] = "TutorialstoPoi";
+    const char needle[10];
+    char *ret;
+    ret = my_strstr(haystack, needle);
+    printf("The substring is: %s\n", ret);
 
     return 0;
 }
