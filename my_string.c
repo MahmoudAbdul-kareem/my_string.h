@@ -473,3 +473,27 @@ char *my_strpbrk(const char *str1, const char *str2)
 
     return ret_val;
 }
+
+char *my_strrchr(const char *str, const int c)
+{
+    const char *last_occurrence = NULL;
+    unsigned char value = (unsigned char)c;
+
+    if(NULL == str)
+    {
+        printf("my_strrchr  failed, due to NULL pointer passed!!\n");
+    }
+    else
+    {
+        while (*str)
+        {
+            if(*str == value)
+            {
+                last_occurrence = str;
+            }
+            str++;
+        }
+    }
+
+    return (char *)last_occurrence;
+}

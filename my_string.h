@@ -35,6 +35,7 @@ unsigned int my_strcspn_v1(const char *str1, const char *const str2);
 unsigned int my_strcspn_v2(const char *str1, const char *const str2);
 unsigned int my_strlen(const char *str);
 char *my_strpbrk(const char *str1, const char *str2);
+char *my_strrchr(const char *str, const int c);
 
 #endif
 /*=========================== File Guard End ===========================*/

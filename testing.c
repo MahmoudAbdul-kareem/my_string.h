@@ -105,6 +105,9 @@ int main()
 
     // printf("> %d \n", my_strlen(arr_1));
 
+    char *ptr = my_strrchr(name, '*');
+    printf("> %s \n", ptr);
+
     return 0;
 }
 
