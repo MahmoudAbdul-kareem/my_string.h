@@ -105,8 +105,14 @@ int main()
 
     // printf("> %d \n", my_strlen(arr_1));
 
-    char *ptr = my_strrchr(name, '*');
-    printf("> %s \n", ptr);
+    // char *ptr = my_strrchr(name, '*');
+    // printf("> %s \n", ptr);
+
+    int len;
+    const char str1[] = "ABCDEFG019874ABCD";
+    const char str2[] = "ABCD";
+    len = my_strspn(str1, str2);
+    printf("Length of initial segment matching %d\n", len );
 
     return 0;
 }

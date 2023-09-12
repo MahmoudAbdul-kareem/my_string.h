@@ -497,3 +497,23 @@ char *my_strrchr(const char *str, const int c)
 
     return (char *)last_occurrence;
 }
+
+unsigned int my_strspn(const char *str1, const char *const str2)
+{
+    unsigned int counter = 0;
+
+    if((NULL == str1) || (NULL == str2))
+    {
+        printf("my_strspn  failed, due to NULL pointer passed!!\n");
+    }
+    else
+    {
+        while (*str1 && my_strchr(str2, *str1))
+        {
+            counter++;
+            str1++;
+        }
+    }
+
+    return counter;
+}
